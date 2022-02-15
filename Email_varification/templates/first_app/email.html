@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Email Verifation</title>
+  </head>
+  <body>
+    {% autoescape off %}
+    Hello {{ user.username }}
+    You have successfully created an account on:
+    Http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+    If you think, its not you, then just ignore this email and try again later!
+    {% endautoescape %}
+  </body>
+</html>
